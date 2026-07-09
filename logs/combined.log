@@ -1,0 +1,465 @@
+2026-07-09T06:16:09.266Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T06:16:09.301Z [INFO] ✅ Local MySQL connected
+2026-07-09T06:16:09.301Z [INFO] ℹ️  Cloud MySQL disabled (CLOUD_DB_ENABLED=false)
+2026-07-09T06:17:05.317Z [INFO] [0mGET / [33m404[0m 11.687 ms - 52[0m
+2026-07-09T06:17:05.325Z [ERROR] Visitor tracking failed: Table 'aarnav_structura.website_visits' doesn't exist
+2026-07-09T06:17:05.397Z [INFO] [0mGET /favicon.ico [33m404[0m 0.857 ms - 63[0m
+2026-07-09T06:23:14.691Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T06:23:14.716Z [INFO] ✅ Local MySQL connected
+2026-07-09T06:23:14.717Z [INFO] ℹ️  Cloud MySQL disabled (CLOUD_DB_ENABLED=false)
+2026-07-09T06:23:22.026Z [INFO] [0mGET / [33m404[0m 11.133 ms - 52[0m
+2026-07-09T06:23:22.029Z [ERROR] Visitor tracking failed: Table 'aarnav_structura.website_visits' doesn't exist
+2026-07-09T06:23:26.140Z [ERROR] POST /api/enquiry — Table 'aarnav_structura.enquiries' doesn't exist
+Error: Table 'aarnav_structura.enquiries' doesn't exist
+    at dualWrite (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/config/db.js:62:41)
+    at Object.create (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/models/Enquiry.js:9:26)
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/controllers/enquiryController.js:13:33
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/middleware/errorHandler.js:5:73
+    at Layer.handle [as handle_request] (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\route.js:149:13)
+    at middleware (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-07-09T06:23:26.141Z [INFO] [0mPOST /api/enquiry [31m500[0m 8.372 ms - 78[0m
+2026-07-09T06:23:26.854Z [ERROR] POST /api/enquiry — Table 'aarnav_structura.enquiries' doesn't exist
+Error: Table 'aarnav_structura.enquiries' doesn't exist
+    at dualWrite (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/config/db.js:62:41)
+    at Object.create (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/models/Enquiry.js:9:26)
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/controllers/enquiryController.js:13:33
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/middleware/errorHandler.js:5:73
+    at Layer.handle [as handle_request] (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\route.js:149:13)
+    at middleware (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-07-09T06:23:26.856Z [INFO] [0mPOST /api/enquiry [31m500[0m 2.876 ms - 78[0m
+2026-07-09T06:23:27.074Z [ERROR] POST /api/enquiry — Table 'aarnav_structura.enquiries' doesn't exist
+Error: Table 'aarnav_structura.enquiries' doesn't exist
+    at dualWrite (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/config/db.js:62:41)
+    at Object.create (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/models/Enquiry.js:9:26)
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/controllers/enquiryController.js:13:33
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/middleware/errorHandler.js:5:73
+    at Layer.handle [as handle_request] (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\route.js:149:13)
+    at middleware (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-07-09T06:23:27.076Z [INFO] [0mPOST /api/enquiry [31m500[0m 2.482 ms - 78[0m
+2026-07-09T06:23:27.310Z [ERROR] POST /api/enquiry — Table 'aarnav_structura.enquiries' doesn't exist
+Error: Table 'aarnav_structura.enquiries' doesn't exist
+    at dualWrite (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/config/db.js:62:41)
+    at Object.create (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/models/Enquiry.js:9:26)
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/controllers/enquiryController.js:13:33
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/middleware/errorHandler.js:5:73
+    at Layer.handle [as handle_request] (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\route.js:149:13)
+    at middleware (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-07-09T06:23:27.311Z [INFO] [0mPOST /api/enquiry [31m500[0m 2.162 ms - 78[0m
+2026-07-09T06:23:27.482Z [ERROR] POST /api/enquiry — Table 'aarnav_structura.enquiries' doesn't exist
+Error: Table 'aarnav_structura.enquiries' doesn't exist
+    at dualWrite (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/config/db.js:62:41)
+    at Object.create (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/models/Enquiry.js:9:26)
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/controllers/enquiryController.js:13:33
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/middleware/errorHandler.js:5:73
+    at Layer.handle [as handle_request] (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\route.js:149:13)
+    at middleware (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-07-09T06:23:27.482Z [INFO] [0mPOST /api/enquiry [31m500[0m 2.431 ms - 78[0m
+2026-07-09T06:23:27.660Z [ERROR] POST /api/enquiry — Table 'aarnav_structura.enquiries' doesn't exist
+Error: Table 'aarnav_structura.enquiries' doesn't exist
+    at dualWrite (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/config/db.js:62:41)
+    at Object.create (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/models/Enquiry.js:9:26)
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/controllers/enquiryController.js:13:33
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/middleware/errorHandler.js:5:73
+    at Layer.handle [as handle_request] (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\route.js:149:13)
+    at middleware (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-07-09T06:23:27.661Z [INFO] [0mPOST /api/enquiry [31m500[0m 1.831 ms - 78[0m
+2026-07-09T06:23:27.828Z [ERROR] POST /api/enquiry — Table 'aarnav_structura.enquiries' doesn't exist
+Error: Table 'aarnav_structura.enquiries' doesn't exist
+    at dualWrite (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/config/db.js:62:41)
+    at Object.create (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/models/Enquiry.js:9:26)
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/controllers/enquiryController.js:13:33
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/middleware/errorHandler.js:5:73
+    at Layer.handle [as handle_request] (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\route.js:149:13)
+    at middleware (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-07-09T06:23:27.829Z [INFO] [0mPOST /api/enquiry [31m500[0m 1.642 ms - 78[0m
+2026-07-09T06:23:27.985Z [ERROR] POST /api/enquiry — Table 'aarnav_structura.enquiries' doesn't exist
+Error: Table 'aarnav_structura.enquiries' doesn't exist
+    at dualWrite (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/config/db.js:62:41)
+    at Object.create (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/models/Enquiry.js:9:26)
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/controllers/enquiryController.js:13:33
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/middleware/errorHandler.js:5:73
+    at Layer.handle [as handle_request] (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\route.js:149:13)
+    at middleware (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-07-09T06:23:27.986Z [INFO] [0mPOST /api/enquiry [31m500[0m 1.795 ms - 78[0m
+2026-07-09T06:23:28.160Z [ERROR] POST /api/enquiry — Table 'aarnav_structura.enquiries' doesn't exist
+Error: Table 'aarnav_structura.enquiries' doesn't exist
+    at dualWrite (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/config/db.js:62:41)
+    at Object.create (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/models/Enquiry.js:9:26)
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/controllers/enquiryController.js:13:33
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/middleware/errorHandler.js:5:73
+    at Layer.handle [as handle_request] (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\route.js:149:13)
+    at middleware (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-07-09T06:23:28.161Z [INFO] [0mPOST /api/enquiry [31m500[0m 2.763 ms - 78[0m
+2026-07-09T06:23:28.323Z [ERROR] POST /api/enquiry — Table 'aarnav_structura.enquiries' doesn't exist
+Error: Table 'aarnav_structura.enquiries' doesn't exist
+    at dualWrite (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/config/db.js:62:41)
+    at Object.create (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/models/Enquiry.js:9:26)
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/controllers/enquiryController.js:13:33
+    at file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/middleware/errorHandler.js:5:73
+    at Layer.handle [as handle_request] (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express\lib\router\route.js:149:13)
+    at middleware (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-07-09T06:23:28.324Z [INFO] [0mPOST /api/enquiry [31m500[0m 2.165 ms - 78[0m
+2026-07-09T06:23:28.540Z [INFO] [0mPOST /api/enquiry [33m429[0m 0.671 ms - 75[0m
+2026-07-09T06:27:00.678Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T06:27:00.705Z [INFO] ✅ Local MySQL connected
+2026-07-09T06:27:00.706Z [INFO] ℹ️  Cloud MySQL disabled (CLOUD_DB_ENABLED=false)
+2026-07-09T06:27:09.800Z [INFO] [0mPOST /api/enquiry [32m201[0m 28.413 ms - 61[0m
+2026-07-09T06:27:12.253Z [ERROR] Email failed (New enquiry — Sanjay T (Renovation & restoration) -> satvikrajgowda282@gmail.com): Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13b659d8da9sm43108007c88.14 - gsmtp
+2026-07-09T06:27:12.276Z [ERROR] Email failed (We've received your project brief — Aarnav Structura -> sanjaykundakar16@gmail.com): Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-31174892711sm28220928eec.13 - gsmtp
+2026-07-09T06:32:20.107Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T06:32:20.161Z [INFO] ✅ Local MySQL connected
+2026-07-09T06:32:20.161Z [INFO] ℹ️  Cloud MySQL disabled (CLOUD_DB_ENABLED=false)
+2026-07-09T06:32:32.682Z [INFO] [0mPOST /api/enquiry [32m201[0m 15.604 ms - 61[0m
+2026-07-09T06:32:37.085Z [INFO] Email sent: New enquiry — Sanjay T (Commercial fit-out) -> satvikrajgowda282@gmail.com
+2026-07-09T06:32:37.474Z [INFO] Email sent: We've received your project brief — Aarnav Structura -> sanjaykundakar16@gmail.com
+2026-07-09T06:33:28.440Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T06:33:28.467Z [INFO] ✅ Local MySQL connected
+2026-07-09T06:33:28.468Z [INFO] ℹ️  Cloud MySQL disabled (CLOUD_DB_ENABLED=false)
+2026-07-09T06:33:30.923Z [INFO] [0mPOST /api/enquiry [32m201[0m 21.816 ms - 61[0m
+2026-07-09T06:33:35.291Z [INFO] Email sent: New enquiry — Sanjay T (Residential construction) -> sanjaykundakar16@gmail.com
+2026-07-09T06:33:35.629Z [INFO] Email sent: We've received your project brief — Aarnav Structura -> sanjaykundakar16@gmail.com
+2026-07-09T06:34:06.060Z [INFO] [0mPOST /api/enquiry [32m201[0m 12.714 ms - 61[0m
+2026-07-09T06:34:10.259Z [INFO] Email sent: New enquiry — Sadfdf (Commercial fit-out) -> sanjaykundakar16@gmail.com
+2026-07-09T06:34:11.032Z [INFO] Email sent: We've received your project brief — Aarnav Structura -> sanjaykundakar16@gmail.com
+2026-07-09T06:37:48.375Z [INFO] [0mPOST /api/auth/login [32m200[0m 212.564 ms - 335[0m
+2026-07-09T06:37:48.478Z [INFO] [0mGET /api/admin/dashboard/overview [32m200[0m 22.344 ms - 230[0m
+2026-07-09T06:37:48.481Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [32m200[0m 19.033 ms - 232[0m
+2026-07-09T06:37:48.489Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 6.319 ms - -[0m
+2026-07-09T06:37:48.492Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 5.554 ms - -[0m
+2026-07-09T06:37:52.929Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [32m200[0m 4.098 ms - 1662[0m
+2026-07-09T06:37:52.932Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 1.959 ms - -[0m
+2026-07-09T06:37:54.147Z [INFO] [0mGET /api/admin/visitors?page=1&limit=20&search=&device= [32m200[0m 3.233 ms - 56[0m
+2026-07-09T06:37:54.152Z [INFO] [0mGET /api/admin/visitors?page=1&limit=20&search=&device= [36m304[0m 3.672 ms - -[0m
+2026-07-09T06:37:55.183Z [INFO] [0mGET /api/projects [32m200[0m 50.769 ms - 26[0m
+2026-07-09T06:37:55.185Z [INFO] [0mGET /api/projects [36m304[0m 1.434 ms - -[0m
+2026-07-09T06:37:56.083Z [INFO] [0mGET /api/admin/visitors?page=1&limit=20&search=&device= [36m304[0m 2.895 ms - -[0m
+2026-07-09T06:37:56.087Z [INFO] [0mGET /api/admin/visitors?page=1&limit=20&search=&device= [36m304[0m 2.896 ms - -[0m
+2026-07-09T06:37:59.041Z [INFO] [0mGET /api/projects [36m304[0m 1.349 ms - -[0m
+2026-07-09T06:37:59.043Z [INFO] [0mGET /api/projects [36m304[0m 1.328 ms - -[0m
+2026-07-09T06:38:00.341Z [INFO] [0mGET /api/gallery [32m200[0m 2.307 ms - 26[0m
+2026-07-09T06:38:00.345Z [INFO] [0mGET /api/gallery [36m304[0m 2.200 ms - -[0m
+2026-07-09T06:38:01.237Z [INFO] [0mGET /api/projects [36m304[0m 0.859 ms - -[0m
+2026-07-09T06:38:01.239Z [INFO] [0mGET /api/projects [36m304[0m 0.795 ms - -[0m
+2026-07-09T06:38:11.688Z [INFO] [0mGET /api/gallery [36m304[0m 0.827 ms - -[0m
+2026-07-09T06:38:11.690Z [INFO] [0mGET /api/gallery [36m304[0m 0.964 ms - -[0m
+2026-07-09T06:38:12.677Z [INFO] [0mGET /api/services [32m200[0m 2.715 ms - 26[0m
+2026-07-09T06:38:12.679Z [INFO] [0mGET /api/services [36m304[0m 0.794 ms - -[0m
+2026-07-09T06:38:13.751Z [INFO] [0mGET /api/projects [36m304[0m 1.129 ms - -[0m
+2026-07-09T06:38:13.753Z [INFO] [0mGET /api/projects [36m304[0m 1.191 ms - -[0m
+2026-07-09T06:38:43.522Z [INFO] [0mPOST /api/projects [32m201[0m 57.642 ms - 360[0m
+2026-07-09T06:38:43.528Z [INFO] [0mGET /api/projects [32m200[0m 1.267 ms - 362[0m
+2026-07-09T06:38:43.536Z [INFO] [0mGET /uploads/uploads/projects/8a88df95-addd-4798-bb75-3ada8faaf5ca.png [33m404[0m 1.906 ms - 117[0m
+2026-07-09T06:38:48.837Z [INFO] [0mGET /api/gallery [36m304[0m 1.057 ms - -[0m
+2026-07-09T06:38:48.839Z [INFO] [0mGET /api/gallery [36m304[0m 1.219 ms - -[0m
+2026-07-09T06:38:49.890Z [INFO] [0mGET /api/projects [36m304[0m 1.057 ms - -[0m
+2026-07-09T06:38:49.892Z [INFO] [0mGET /api/projects [36m304[0m 0.876 ms - -[0m
+2026-07-09T06:38:49.896Z [INFO] [0mGET /uploads/uploads/projects/8a88df95-addd-4798-bb75-3ada8faaf5ca.png [33m404[0m 0.785 ms - 117[0m
+2026-07-09T06:38:54.467Z [INFO] [0mGET /api/settings/hero [33m404[0m 1.818 ms - 47[0m
+2026-07-09T06:38:54.469Z [INFO] [0mGET /api/settings/hero [33m404[0m 1.100 ms - 47[0m
+2026-07-09T06:39:00.408Z [INFO] [0mGET /api/settings/about [33m404[0m 0.792 ms - 47[0m
+2026-07-09T06:39:01.449Z [INFO] [0mGET /api/settings/contact_info [33m404[0m 0.746 ms - 47[0m
+2026-07-09T06:39:02.494Z [INFO] [0mGET /api/settings/hero [33m404[0m 0.813 ms - 47[0m
+2026-07-09T06:39:29.846Z [INFO] [0mPOST /api/track/pageview [32m200[0m 25.132 ms - 16[0m
+2026-07-09T06:39:29.847Z [INFO] [0mPOST /api/track/pageview [32m200[0m 11.752 ms - 16[0m
+2026-07-09T06:39:50.255Z [INFO] [0mGET /api/admin/dashboard/overview [32m200[0m 5.257 ms - 227[0m
+2026-07-09T06:39:50.257Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [32m200[0m 4.891 ms - 384[0m
+2026-07-09T06:39:50.262Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 3.887 ms - -[0m
+2026-07-09T06:39:50.265Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 4.833 ms - -[0m
+2026-07-09T06:40:02.811Z [INFO] [0mGET /api/services [36m304[0m 1.010 ms - -[0m
+2026-07-09T06:40:02.813Z [INFO] [0mGET /api/services [36m304[0m 0.921 ms - -[0m
+2026-07-09T06:40:04.835Z [INFO] [0mGET /api/gallery [36m304[0m 0.950 ms - -[0m
+2026-07-09T06:40:04.836Z [INFO] [0mGET /api/gallery [36m304[0m 0.667 ms - -[0m
+2026-07-09T06:40:05.715Z [INFO] [0mGET /api/projects [36m304[0m 3.306 ms - -[0m
+2026-07-09T06:40:05.716Z [INFO] [0mGET /api/projects [36m304[0m 0.763 ms - -[0m
+2026-07-09T06:40:05.720Z [INFO] [0mGET /uploads/uploads/projects/8a88df95-addd-4798-bb75-3ada8faaf5ca.png [33m404[0m 0.437 ms - 117[0m
+2026-07-09T06:40:06.575Z [INFO] [0mGET /api/admin/visitors?page=1&limit=20&search=&device= [32m200[0m 2.223 ms - 945[0m
+2026-07-09T06:40:06.579Z [INFO] [0mGET /api/admin/visitors?page=1&limit=20&search=&device= [36m304[0m 2.639 ms - -[0m
+2026-07-09T06:40:07.368Z [INFO] [0mGET /api/projects [36m304[0m 1.568 ms - -[0m
+2026-07-09T06:40:07.370Z [INFO] [0mGET /api/projects [36m304[0m 0.981 ms - -[0m
+2026-07-09T06:40:07.374Z [INFO] [0mGET /uploads/uploads/projects/8a88df95-addd-4798-bb75-3ada8faaf5ca.png [33m404[0m 0.685 ms - 117[0m
+2026-07-09T06:43:55.773Z [INFO] [0mDELETE /api/projects/1 [32m200[0m 13.073 ms - 36[0m
+2026-07-09T06:43:55.779Z [INFO] [0mGET /api/projects [32m200[0m 0.856 ms - 26[0m
+2026-07-09T06:43:58.096Z [INFO] [0mGET /api/admin/visitors?page=1&limit=20&search=&device= [36m304[0m 2.178 ms - -[0m
+2026-07-09T06:43:58.099Z [INFO] [0mGET /api/admin/visitors?page=1&limit=20&search=&device= [36m304[0m 2.580 ms - -[0m
+2026-07-09T06:44:08.878Z [INFO] [0mGET /api/projects [36m304[0m 0.784 ms - -[0m
+2026-07-09T06:44:08.880Z [INFO] [0mGET /api/projects [36m304[0m 0.984 ms - -[0m
+2026-07-09T06:44:09.802Z [INFO] [0mGET /api/gallery [36m304[0m 0.910 ms - -[0m
+2026-07-09T06:44:09.804Z [INFO] [0mGET /api/gallery [36m304[0m 0.999 ms - -[0m
+2026-07-09T06:44:11.505Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 2.197 ms - -[0m
+2026-07-09T06:44:11.507Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 1.573 ms - -[0m
+2026-07-09T06:44:13.380Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 4.876 ms - -[0m
+2026-07-09T06:44:13.382Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 5.492 ms - -[0m
+2026-07-09T06:44:13.388Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 4.787 ms - -[0m
+2026-07-09T06:44:13.406Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 21.451 ms - -[0m
+2026-07-09T06:44:14.342Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 2.625 ms - -[0m
+2026-07-09T06:44:14.346Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 3.044 ms - -[0m
+2026-07-09T06:44:36.677Z [INFO] [0mGET /api/projects [36m304[0m 0.902 ms - -[0m
+2026-07-09T06:44:36.679Z [INFO] [0mGET /api/projects [36m304[0m 0.682 ms - -[0m
+2026-07-09T06:45:02.918Z [INFO] [0mPOST /api/projects [32m201[0m 55.620 ms - 354[0m
+2026-07-09T06:45:02.924Z [INFO] [0mGET /api/projects [32m200[0m 1.891 ms - 356[0m
+2026-07-09T06:45:02.929Z [INFO] [0mGET /uploads/uploads/projects/f36523de-38dc-4691-8758-c3d2da638652.png [33m404[0m 0.600 ms - 117[0m
+2026-07-09T06:45:19.214Z [INFO] [0mDELETE /api/projects/2 [32m200[0m 8.764 ms - 36[0m
+2026-07-09T06:45:19.220Z [INFO] [0mGET /api/projects [32m200[0m 1.537 ms - 26[0m
+2026-07-09T06:48:54.522Z [INFO] [0mPOST /api/auth/login [32m200[0m 250.444 ms - 335[0m
+2026-07-09T06:48:54.575Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 4.392 ms - -[0m
+2026-07-09T06:48:54.576Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 3.762 ms - -[0m
+2026-07-09T06:48:54.582Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 4.606 ms - -[0m
+2026-07-09T06:48:54.583Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 3.498 ms - -[0m
+2026-07-09T06:48:56.767Z [INFO] [0mGET /api/settings/hero [33m404[0m 1.045 ms - 47[0m
+2026-07-09T06:48:56.768Z [INFO] [0mGET /api/settings/hero [33m404[0m 0.733 ms - 47[0m
+2026-07-09T06:48:58.334Z [INFO] [0mGET /api/team [32m200[0m 4.861 ms - 26[0m
+2026-07-09T06:48:58.337Z [INFO] [0mGET /api/team [36m304[0m 1.089 ms - -[0m
+2026-07-09T06:48:59.538Z [INFO] [0mGET /api/settings/hero [33m404[0m 1.210 ms - 47[0m
+2026-07-09T06:48:59.540Z [INFO] [0mGET /api/settings/hero [33m404[0m 1.102 ms - 47[0m
+2026-07-09T06:49:02.702Z [INFO] [0mGET /api/team [36m304[0m 1.300 ms - -[0m
+2026-07-09T06:49:02.704Z [INFO] [0mGET /api/team [36m304[0m 0.823 ms - -[0m
+2026-07-09T06:49:03.596Z [INFO] [0mGET /api/services [36m304[0m 1.144 ms - -[0m
+2026-07-09T06:49:03.598Z [INFO] [0mGET /api/services [36m304[0m 0.923 ms - -[0m
+2026-07-09T06:49:04.668Z [INFO] [0mGET /api/testimonials [32m200[0m 5.231 ms - 26[0m
+2026-07-09T06:49:04.670Z [INFO] [0mGET /api/testimonials [36m304[0m 0.882 ms - -[0m
+2026-07-09T06:49:05.650Z [INFO] [0mGET /api/projects [36m304[0m 1.268 ms - -[0m
+2026-07-09T06:49:05.651Z [INFO] [0mGET /api/projects [36m304[0m 0.834 ms - -[0m
+2026-07-09T06:49:06.584Z [INFO] [0mGET /api/gallery [36m304[0m 1.016 ms - -[0m
+2026-07-09T06:49:06.586Z [INFO] [0mGET /api/gallery [36m304[0m 1.244 ms - -[0m
+2026-07-09T06:49:07.394Z [INFO] [0mGET /api/testimonials [36m304[0m 1.175 ms - -[0m
+2026-07-09T06:49:07.397Z [INFO] [0mGET /api/testimonials [36m304[0m 1.334 ms - -[0m
+2026-07-09T06:49:08.721Z [INFO] [0mGET /api/projects [36m304[0m 1.246 ms - -[0m
+2026-07-09T06:49:08.724Z [INFO] [0mGET /api/projects [36m304[0m 1.391 ms - -[0m
+2026-07-09T06:49:09.456Z [INFO] [0mGET /api/admin/visitors?page=1&limit=20&search=&device= [36m304[0m 2.144 ms - -[0m
+2026-07-09T06:49:09.459Z [INFO] [0mGET /api/admin/visitors?page=1&limit=20&search=&device= [36m304[0m 2.082 ms - -[0m
+2026-07-09T06:49:10.520Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 1.929 ms - -[0m
+2026-07-09T06:49:10.522Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 1.618 ms - -[0m
+2026-07-09T06:49:12.302Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 4.492 ms - -[0m
+2026-07-09T06:49:12.303Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 4.394 ms - -[0m
+2026-07-09T06:49:12.309Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 5.713 ms - -[0m
+2026-07-09T06:49:12.312Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 5.067 ms - -[0m
+2026-07-09T06:49:13.849Z [INFO] [0mGET /api/settings/hero [33m404[0m 1.145 ms - 47[0m
+2026-07-09T06:49:13.851Z [INFO] [0mGET /api/settings/hero [33m404[0m 0.884 ms - 47[0m
+2026-07-09T06:49:17.986Z [INFO] [0mGET /api/team [36m304[0m 0.895 ms - -[0m
+2026-07-09T06:49:17.988Z [INFO] [0mGET /api/team [36m304[0m 0.914 ms - -[0m
+2026-07-09T06:49:26.033Z [INFO] [0mGET /api/admin/visitors?page=1&limit=20&search=&device= [36m304[0m 11.894 ms - -[0m
+2026-07-09T06:49:26.046Z [INFO] [0mGET /api/admin/visitors?page=1&limit=20&search=&device= [36m304[0m 9.743 ms - -[0m
+2026-07-09T06:49:27.224Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 71.087 ms - -[0m
+2026-07-09T06:49:27.383Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 96.486 ms - -[0m
+2026-07-09T06:49:28.015Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 81.558 ms - -[0m
+2026-07-09T06:49:28.063Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 95.416 ms - -[0m
+2026-07-09T06:49:28.368Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 227.039 ms - -[0m
+2026-07-09T06:49:28.417Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 215.298 ms - -[0m
+2026-07-09T06:54:40.690Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 4.762 ms - -[0m
+2026-07-09T06:54:40.692Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 3.998 ms - -[0m
+2026-07-09T06:54:40.697Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 4.103 ms - -[0m
+2026-07-09T06:54:40.698Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 3.102 ms - -[0m
+2026-07-09T06:54:41.194Z [INFO] [0mGET /api/projects [36m304[0m 0.869 ms - -[0m
+2026-07-09T06:54:41.195Z [INFO] [0mGET /api/projects [36m304[0m 0.669 ms - -[0m
+2026-07-09T06:54:43.377Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 2.737 ms - -[0m
+2026-07-09T06:54:43.380Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 2.381 ms - -[0m
+2026-07-09T06:54:44.293Z [INFO] [0mGET /api/testimonials [36m304[0m 0.986 ms - -[0m
+2026-07-09T06:54:44.295Z [INFO] [0mGET /api/testimonials [36m304[0m 1.033 ms - -[0m
+2026-07-09T06:55:21.888Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 4.666 ms - -[0m
+2026-07-09T06:55:21.889Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 3.841 ms - -[0m
+2026-07-09T06:55:21.896Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 5.984 ms - -[0m
+2026-07-09T06:55:21.898Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 6.000 ms - -[0m
+2026-07-09T06:55:25.378Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 6.468 ms - -[0m
+2026-07-09T06:55:25.379Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 5.353 ms - -[0m
+2026-07-09T06:55:25.386Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 6.403 ms - -[0m
+2026-07-09T06:55:25.388Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 6.370 ms - -[0m
+2026-07-09T06:55:28.263Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 4.330 ms - -[0m
+2026-07-09T06:55:28.267Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 6.890 ms - -[0m
+2026-07-09T06:55:28.273Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 4.613 ms - -[0m
+2026-07-09T06:55:28.274Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 3.429 ms - -[0m
+2026-07-09T06:58:03.090Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 2.177 ms - -[0m
+2026-07-09T06:58:03.094Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 2.416 ms - -[0m
+2026-07-09T06:58:04.223Z [INFO] [0mGET /api/admin/visitors?page=1&limit=20&search=&device= [36m304[0m 1.935 ms - -[0m
+2026-07-09T06:58:04.226Z [INFO] [0mGET /api/admin/visitors?page=1&limit=20&search=&device= [36m304[0m 2.527 ms - -[0m
+2026-07-09T06:58:05.223Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 2.155 ms - -[0m
+2026-07-09T06:58:05.226Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 2.146 ms - -[0m
+2026-07-09T06:58:05.995Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 4.690 ms - -[0m
+2026-07-09T06:58:05.997Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 4.889 ms - -[0m
+2026-07-09T06:58:06.003Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 4.707 ms - -[0m
+2026-07-09T06:58:06.006Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 5.078 ms - -[0m
+2026-07-09T14:23:55.044Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 28.529 ms - -[0m
+2026-07-09T14:23:55.051Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 6.159 ms - -[0m
+2026-07-09T14:23:55.052Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 3.696 ms - -[0m
+2026-07-09T14:23:55.063Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 9.896 ms - -[0m
+2026-07-09T14:23:55.204Z [INFO] [0mPOST /api/track/pageview [32m200[0m 4.574 ms - 16[0m
+2026-07-09T14:23:55.205Z [INFO] [0mPOST /api/track/pageview [32m200[0m 4.438 ms - 16[0m
+2026-07-09T14:23:55.284Z [INFO] [0mPOST /api/track/pageview [32m200[0m 3.436 ms - 16[0m
+2026-07-09T14:23:55.285Z [INFO] [0mPOST /api/track/pageview [32m200[0m 3.284 ms - 16[0m
+2026-07-09T14:24:46.716Z [INFO] [0mPOST /api/enquiry [32m201[0m 12.236 ms - 61[0m
+2026-07-09T14:24:51.004Z [INFO] Email sent: New enquiry — Sanjay T (Interior design) -> sanjaykundakar16@gmail.com
+2026-07-09T14:24:51.433Z [INFO] Email sent: We've received your project brief — Aarnav Structura -> sanjaykundakar16@gmail.com
+2026-07-09T16:36:41.267Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T16:36:41.267Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T16:36:41.270Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T16:38:37.777Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T16:38:37.781Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T16:38:37.881Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T16:39:15.671Z [INFO] [0mGET /api/health [32m200[0m 2.865 ms - 77[0m
+2026-07-09T16:39:40.709Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T16:39:51.589Z [INFO] [0mPOST /api/track/pageview [32m200[0m 86.382 ms - 16[0m
+2026-07-09T16:39:51.599Z [INFO] [0mPOST /api/track/pageview [32m200[0m 76.909 ms - 16[0m
+2026-07-09T16:39:56.992Z [INFO] [0mPOST /api/track/pageview [32m200[0m 66.690 ms - 16[0m
+2026-07-09T16:39:56.994Z [INFO] [0mPOST /api/track/pageview [32m200[0m 65.074 ms - 16[0m
+2026-07-09T16:40:10.584Z [INFO] [0mPOST /api/enquiry [32m201[0m 83.420 ms - 99[0m
+2026-07-09T16:40:12.751Z [ERROR] Email failed (New enquiry — undefined (General) -> your_email@gmail.com): Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13b659d7c8bsm34638926c88.12 - gsmtp
+2026-07-09T16:40:12.760Z [ERROR] Email failed (We've received your project brief — Aarnav Structura -> sanjaykundakar16@gmail.com): Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-31174892711sm33866296eec.13 - gsmtp
+2026-07-09T16:40:46.082Z [INFO] [0mGET /api/admin/dashboard/overview [33m401[0m 2.936 ms - 54[0m
+2026-07-09T16:40:46.084Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [33m401[0m 1.398 ms - 54[0m
+2026-07-09T16:40:46.087Z [INFO] [0mGET /api/admin/dashboard/overview [33m401[0m 1.551 ms - 54[0m
+2026-07-09T16:40:46.097Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [33m401[0m 1.548 ms - 54[0m
+2026-07-09T16:40:49.926Z [INFO] [0mPOST /api/auth/login [33m401[0m 137.166 ms - 49[0m
+2026-07-09T16:41:39.858Z [INFO] [0mPOST /api/auth/login [33m401[0m 110.669 ms - 49[0m
+2026-07-09T16:41:44.986Z [INFO] [0mPOST /api/auth/login [33m401[0m 137.479 ms - 49[0m
+2026-07-09T16:41:45.183Z [INFO] [0mPOST /api/auth/login [33m401[0m 108.208 ms - 49[0m
+2026-07-09T16:41:45.429Z [INFO] [0mPOST /api/auth/login [33m401[0m 132.983 ms - 49[0m
+2026-07-09T16:41:45.575Z [INFO] [0mPOST /api/auth/login [33m401[0m 99.030 ms - 49[0m
+2026-07-09T16:41:45.764Z [INFO] [0mPOST /api/auth/login [33m401[0m 115.587 ms - 49[0m
+2026-07-09T16:41:45.924Z [INFO] [0mPOST /api/auth/login [33m401[0m 110.678 ms - 49[0m
+2026-07-09T16:41:46.174Z [INFO] [0mPOST /api/auth/login [33m401[0m 137.623 ms - 49[0m
+2026-07-09T17:27:05.952Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T17:27:05.956Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T17:27:15.488Z [INFO] [0mPOST /api/auth/login [33m401[0m 157.436 ms - 49[0m
+2026-07-09T17:29:23.523Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T17:29:23.527Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T17:29:32.367Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T17:29:32.372Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T17:43:07.849Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T17:43:07.852Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T17:43:18.162Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T17:43:18.166Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T17:44:12.201Z [INFO] [0mPOST /api/auth/login [33m401[0m 191.144 ms - 49[0m
+2026-07-09T17:44:52.164Z [INFO] [0mPOST /api/auth/login [33m401[0m 147.542 ms - 49[0m
+2026-07-09T17:44:53.065Z [INFO] [0mPOST /api/auth/login [33m401[0m 148.566 ms - 49[0m
+2026-07-09T17:45:02.821Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T17:45:02.825Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T17:45:17.385Z [INFO] [0mPOST /api/auth/login [33m401[0m 137.395 ms - 49[0m
+2026-07-09T17:45:23.592Z [INFO] [0mPOST /api/auth/login [33m401[0m 148.106 ms - 49[0m
+2026-07-09T17:47:46.422Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T17:47:46.426Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T17:47:59.513Z [INFO] [0mPOST /api/auth/login [32m200[0m 232.330 ms - 370[0m
+2026-07-09T17:47:59.911Z [INFO] [0mGET /api/admin/dashboard/overview [32m200[0m 348.692 ms - 215[0m
+2026-07-09T17:48:00.051Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [32m200[0m 481.835 ms - 415[0m
+2026-07-09T17:48:00.226Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 311.285 ms - -[0m
+2026-07-09T17:48:00.513Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 458.821 ms - -[0m
+2026-07-09T17:48:02.616Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [32m200[0m 132.858 ms - 415[0m
+2026-07-09T17:48:02.748Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 127.090 ms - -[0m
+2026-07-09T17:48:08.910Z [ERROR] PATCH /api/admin/enquiries/undefined/status — Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Enquiry"
+CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Enquiry"
+    at SchemaObjectId.cast (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\mongoose\lib\schemaType.js:1718:17)
+    at cast (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOneAndUpdate (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\mongoose\lib\query.js:3477:8)
+    at model.Query.exec (C:\Users\sanja\Downloads\files\aarnav-structura-backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.updateStatus (file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/models/Enquiry.js:160:12)
+    at async file:///C:/Users/sanja/Downloads/files/aarnav-structura-backend/controllers/enquiryController.js:89:19
+2026-07-09T17:48:08.911Z [INFO] [0mPATCH /api/admin/enquiries/undefined/status [31m500[0m 4.449 ms - 129[0m
+2026-07-09T17:48:39.846Z [INFO] [0mPOST /api/enquiry [32m201[0m 80.267 ms - 99[0m
+2026-07-09T17:48:42.113Z [ERROR] Email failed (New enquiry — undefined (General) -> your_email@gmail.com): Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-311838c9235sm26203377eec.21 - gsmtp
+2026-07-09T17:48:42.294Z [ERROR] Email failed (We've received your project brief — Aarnav Structura -> sanjaykundakar16@gmail.com): Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-31174accae5sm51442589eec.29 - gsmtp
+2026-07-09T17:48:44.636Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [32m200[0m 115.364 ms - 804[0m
+2026-07-09T17:48:44.762Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 124.286 ms - -[0m
+2026-07-09T17:58:44.361Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 140.352 ms - -[0m
+2026-07-09T18:14:06.417Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T18:14:06.421Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T18:15:33.121Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T18:15:33.124Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T18:15:46.927Z [INFO] [0mPOST /api/track/pageview [32m200[0m 81.034 ms - 16[0m
+2026-07-09T18:15:46.977Z [INFO] [0mPOST /api/track/pageview [32m200[0m 103.255 ms - 16[0m
+2026-07-09T18:16:01.844Z [INFO] [0mPOST /api/enquiry [32m201[0m 72.454 ms - 99[0m
+2026-07-09T18:16:06.154Z [INFO] Email sent: We've received your project brief — Aarnav Structura -> sanjaykundakar16@gmail.com
+2026-07-09T18:16:06.790Z [INFO] Email sent: New enquiry — undefined (General) -> sanjaykundakar16@gmail.com,satvikrajgowda282@gmail.com,anrcreativecivilarchitecture@gmail.com
+2026-07-09T18:18:05.667Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T18:18:05.671Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T18:18:09.536Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T18:18:09.540Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T18:18:33.906Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T18:18:33.909Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T18:18:37.316Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T18:18:37.319Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T18:18:54.760Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T18:18:54.763Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T18:19:17.074Z [INFO] [0mPOST /api/enquiry [32m201[0m 105.820 ms - 99[0m
+2026-07-09T18:19:21.524Z [INFO] Email sent: New enquiry — undefined (General) -> sanjaykundakar16@gmail.com,satvikrajgowda282@gmail.com,anrcreativecivilarchitecture@gmail.com
+2026-07-09T18:19:21.868Z [INFO] Email sent: We've received your project brief — Aarnav Structura -> sanjaykundakar16@gmail.com
+2026-07-09T18:19:47.536Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T18:19:47.540Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T18:19:52.035Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T18:19:52.039Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T18:20:59.896Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T18:20:59.899Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T18:21:05.021Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T18:21:05.025Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T18:21:22.236Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T18:21:22.239Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T18:21:29.035Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T18:21:29.039Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T18:21:32.796Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T18:21:32.800Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T18:21:35.416Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T18:21:35.420Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T18:21:44.042Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T18:21:44.046Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T18:21:49.208Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T18:21:49.211Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T18:22:02.167Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T18:22:02.170Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T18:22:04.405Z [INFO] ✅ MongoDB connected successfully
+2026-07-09T18:22:04.409Z [INFO] 🚀 Aarnav Structura API running on port 5000 [development]
+2026-07-09T18:22:24.414Z [INFO] [0mPOST /api/enquiry [32m201[0m 98.120 ms - 99[0m
+2026-07-09T18:22:28.748Z [INFO] Email sent: We've received your project brief — Aarnav Structura -> sanjaykundakar16@gmail.com
+2026-07-09T18:22:29.125Z [INFO] Email sent: New enquiry — Sanjay T (Residential construction) -> sanjaykundakar16@gmail.com,satvikrajgowda282@gmail.com,anrcreativecivilarchitecture@gmail.com
+2026-07-09T18:23:51.663Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [32m200[0m 150.242 ms - 1998[0m
+2026-07-09T18:23:51.802Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 136.382 ms - -[0m
+2026-07-09T18:23:57.634Z [INFO] [0mPATCH /api/admin/enquiries/6a4fe6e0efcfe4dbfca9c869/status [32m200[0m 132.873 ms - 436[0m
+2026-07-09T18:23:57.753Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [32m200[0m 110.356 ms - 2004[0m
+2026-07-09T18:24:04.446Z [INFO] [0mPATCH /api/admin/enquiries/6a4fe6e0efcfe4dbfca9c869/status [32m200[0m 132.701 ms - 438[0m
+2026-07-09T18:24:04.595Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [32m200[0m 142.226 ms - 2006[0m
+2026-07-09T18:24:16.399Z [INFO] [0mDELETE /api/admin/enquiries/bulk [32m200[0m 66.003 ms - 48[0m
+2026-07-09T18:24:16.687Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [32m200[0m 280.123 ms - 1646[0m
+2026-07-09T18:24:18.941Z [INFO] [0mGET /api/admin/enquiries/export/csv?search=&status= [32m200[0m 132.541 ms - 847[0m
+2026-07-09T18:24:49.559Z [INFO] [0mPATCH /api/admin/enquiries/6a4fe6e0efcfe4dbfca9c869/status [32m200[0m 148.034 ms - 432[0m
+2026-07-09T18:24:49.683Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [32m200[0m 119.539 ms - 1640[0m
+2026-07-09T18:24:53.579Z [INFO] [0mGET /api/admin/visitors?page=1&limit=20&search=&device= [32m200[0m 126.459 ms - 1727[0m
+2026-07-09T18:24:53.694Z [INFO] [0mGET /api/admin/visitors?page=1&limit=20&search=&device= [36m304[0m 113.909 ms - -[0m
+2026-07-09T18:24:58.881Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 145.763 ms - -[0m
+2026-07-09T18:24:59.038Z [INFO] [0mGET /api/admin/enquiries?page=1&limit=15&search=&status= [36m304[0m 154.369 ms - -[0m
+2026-07-09T18:25:00.080Z [INFO] [0mGET /api/admin/dashboard/overview [32m200[0m 359.556 ms - 215[0m
+2026-07-09T18:25:00.229Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [32m200[0m 514.823 ms - 415[0m
+2026-07-09T18:25:00.360Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 278.217 ms - -[0m
+2026-07-09T18:25:00.661Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 428.023 ms - -[0m
+2026-07-09T18:25:01.193Z [INFO] [0mGET /api/admin/visitors?page=1&limit=20&search=&device= [36m304[0m 123.047 ms - -[0m
+2026-07-09T18:25:01.320Z [INFO] [0mGET /api/admin/visitors?page=1&limit=20&search=&device= [36m304[0m 125.313 ms - -[0m
+2026-07-09T18:25:02.690Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 143.909 ms - -[0m
+2026-07-09T18:25:02.758Z [INFO] [0mGET /api/admin/dashboard/charts?days=30 [36m304[0m 65.303 ms - -[0m
+2026-07-09T18:25:02.914Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 370.292 ms - -[0m
+2026-07-09T18:25:03.187Z [INFO] [0mGET /api/admin/dashboard/overview [36m304[0m 272.295 ms - -[0m

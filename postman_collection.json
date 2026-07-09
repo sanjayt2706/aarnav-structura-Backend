@@ -1,0 +1,71 @@
+{
+  "info": { "name": "Aarnav Structura API", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000" },
+    { "key": "token", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"admin@aarnavstructura.com\",\n  \"password\": \"ChangeMe123!\"\n}" },
+            "url": "{{baseUrl}}/api/auth/login"
+          }
+        },
+        { "name": "Me", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/auth/me" } }
+      ]
+    },
+    {
+      "name": "Public - Enquiry",
+      "item": [
+        {
+          "name": "Submit Enquiry",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"fullName\": \"Test User\",\n  \"phoneNumber\": \"+919999999999\",\n  \"email\": \"test@example.com\",\n  \"location\": \"Shivamogga\",\n  \"projectType\": \"Residential construction\",\n  \"budget\": \"₹50L – ₹1 Crore\",\n  \"projectBrief\": \"Need a 2BHK independent house.\"\n}" },
+            "url": "{{baseUrl}}/api/enquiry"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin - Enquiries",
+      "item": [
+        { "name": "List", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/admin/enquiries?page=1&limit=20" } },
+        {
+          "name": "Update Status",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }, { "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"status\": \"Contacted\",\n  \"adminNotes\": \"Called, follow up next week.\"\n}" },
+            "url": "{{baseUrl}}/api/admin/enquiries/1/status"
+          }
+        },
+        { "name": "Export CSV", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/admin/enquiries/export/csv" } }
+      ]
+    },
+    {
+      "name": "Admin - Dashboard",
+      "item": [
+        { "name": "Overview", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/admin/dashboard/overview" } },
+        { "name": "Charts", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/admin/dashboard/charts?days=30" } }
+      ]
+    },
+    {
+      "name": "Public - Content",
+      "item": [
+        { "name": "Settings", "request": { "method": "GET", "url": "{{baseUrl}}/api/settings" } },
+        { "name": "Projects", "request": { "method": "GET", "url": "{{baseUrl}}/api/projects" } },
+        { "name": "Services", "request": { "method": "GET", "url": "{{baseUrl}}/api/services" } },
+        { "name": "Testimonials", "request": { "method": "GET", "url": "{{baseUrl}}/api/testimonials" } },
+        { "name": "Team", "request": { "method": "GET", "url": "{{baseUrl}}/api/team" } }
+      ]
+    }
+  ]
+}
