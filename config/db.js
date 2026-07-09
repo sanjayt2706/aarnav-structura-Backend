@@ -8,7 +8,6 @@ export async function connectDB() {
     if (!uri) {
       throw new Error("MONGODB_URI is not defined in .env");
     }
-    console.log("Mongo URI:", process.env.MONGODB_URI);
     await mongoose.connect(uri);
 
     logger.info("✅ MongoDB connected successfully");
