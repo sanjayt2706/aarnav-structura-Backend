@@ -22,6 +22,11 @@ import { publicSettingsRouter, adminSettingsRouter } from "./routes/settings.rou
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 
+// Render (and most PaaS hosts) put the app behind a reverse proxy, so
+// req.ip / X-Forwarded-For need this to be trusted — otherwise
+// express-rate-limit throws on every rate-limited request (e.g. POST /api/enquiry).
+app.set("trust proxy", 1);
+
 // ---------- Core middleware ----------
 app.use(helmet({ crossOriginResourcePolicy: { policy: "cross-origin" } })); // allow uploaded images to be fetched cross-origin by the frontend
 app.use(cors({ origin: [process.env.CLIENT_URL, process.env.ADMIN_URL].filter(Boolean), credentials: true }));
