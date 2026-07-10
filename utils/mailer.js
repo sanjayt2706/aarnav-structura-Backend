@@ -1,13 +1,24 @@
 import nodemailer from "nodemailer";
 import logger from "../config/logger.js";
 
+// Render's dashboard (unlike a shell-parsed .env file) does NOT strip quote
+// characters from environment variable values — if a value is entered as
+// SMTP_PASSWORD="abcd efgh" the app sees the literal quotes as part of the
+// string, which silently breaks SMTP auth. Strip them defensively so a
+// copy-paste mistake in the Render UI can't quietly kill email delivery.
+const unquote = (v) => (typeof v === "string" ? v.trim().replace(/^["'](.*)["']$/, "$1") : v);
+
+const SMTP_USER = unquote(process.env.SMTP_USER);
+const SMTP_PASSWORD = unquote(process.env.SMTP_PASSWORD);
+const MAIL_FROM = unquote(process.env.MAIL_FROM) || `"Aarnav Structura" <${SMTP_USER}>`;
+
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT) || 587,
   secure: String(process.env.SMTP_SECURE).toLowerCase() === "true",
   auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASSWORD,
+    user: SMTP_USER,
+    pass: SMTP_PASSWORD,
   },
 });
 
@@ -24,7 +35,7 @@ transporter.verify((err, success) => {
 async function safeSend(options) {
   try {
     const info = await transporter.sendMail({
-      from: `"Aarnav Structura" <${process.env.SMTP_USER}>`,
+      from: MAIL_FROM,
       ...options,
     });
 
