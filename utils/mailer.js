@@ -5,68 +5,193 @@ const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT) || 587,
   secure: String(process.env.SMTP_SECURE).toLowerCase() === "true",
-  auth: process.env.SMTP_USER ? { user: process.env.SMTP_USER, pass: process.env.SMTP_PASSWORD } : undefined
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASSWORD,
+  },
+});
+
+// Verify SMTP connection when server starts
+transporter.verify((err, success) => {
+  if (err) {
+    logger.error("❌ SMTP Verification Failed");
+    logger.error(err);
+  } else {
+    logger.info("✅ SMTP Server Connected");
+  }
 });
 
 async function safeSend(options) {
   try {
-    await transporter.sendMail({ from: process.env.MAIL_FROM, ...options });
-    logger.info(`Email sent: ${options.subject} -> ${options.to}`);
+    const info = await transporter.sendMail({
+      from: `"Aarnav Structura" <${process.env.SMTP_USER}>`,
+      ...options,
+    });
+
+    logger.info(`✅ Email sent successfully`);
+    logger.info(`To: ${options.to}`);
+    logger.info(`Subject: ${options.subject}`);
+    logger.info(`Message ID: ${info.messageId}`);
+
+    return info;
   } catch (err) {
-    // Never let email failure break the enquiry flow — just log it.
-    logger.error(`Email failed (${options.subject} -> ${options.to}): ${err.message}`);
+    logger.error("❌ Email Sending Failed");
+    logger.error(`To: ${options.to}`);
+    logger.error(`Subject: ${options.subject}`);
+    logger.error(err);
   }
 }
 
 export async function sendCustomerConfirmation(enquiry) {
-  await safeSend({
+  if (!enquiry.email) return;
+
+  return safeSend({
     to: enquiry.email,
-    subject: "We've received your project brief — Aarnav Structura",
+    subject: "We've received your project enquiry - Aarnav Structura",
     html: `
-      <div style="font-family: Arial, sans-serif; max-width: 560px; margin: 0 auto; color:#1a1a1a;">
-        <h2 style="color:#B8862E;">Thank you, ${enquiry.fullName}.</h2>
-        <p>We've received your project brief and will get back to you within <strong>24 hours</strong>.</p>
-        <table style="width:100%; border-collapse: collapse; margin-top:16px;">
-          <tr><td style="padding:6px 0; color:#666;">Project type</td><td>${enquiry.projectType || "—"}</td></tr>
-          <tr><td style="padding:6px 0; color:#666;">Budget</td><td>${enquiry.budget || "—"}</td></tr>
-          <tr><td style="padding:6px 0; color:#666;">Location</td><td>${enquiry.location || "—"}</td></tr>
+      <div style="font-family:Arial,sans-serif;max-width:650px;margin:auto;">
+        <h2 style="color:#B8862E;">Thank you ${enquiry.fullName}!</h2>
+
+        <p>We have successfully received your enquiry.</p>
+
+        <p>Our team will contact you within <strong>24 hours</strong>.</p>
+
+        <hr>
+
+        <h3>Your Submission</h3>
+
+        <table style="border-collapse:collapse;width:100%;">
+          <tr>
+            <td><b>Name</b></td>
+            <td>${enquiry.fullName}</td>
+          </tr>
+
+          <tr>
+            <td><b>Phone</b></td>
+            <td>${enquiry.phoneNumber}</td>
+          </tr>
+
+          <tr>
+            <td><b>Email</b></td>
+            <td>${enquiry.email}</td>
+          </tr>
+
+          <tr>
+            <td><b>Location</b></td>
+            <td>${enquiry.location || "-"}</td>
+          </tr>
+
+          <tr>
+            <td><b>Project Type</b></td>
+            <td>${enquiry.projectType || "-"}</td>
+          </tr>
+
+          <tr>
+            <td><b>Budget</b></td>
+            <td>${enquiry.budget || "-"}</td>
+          </tr>
         </table>
-        <p style="margin-top:20px;">If it's urgent, call us at <strong>+91 77603 76348</strong> or WhatsApp <strong>+91 87623 98728</strong>.</p>
-        <p style="color:#999; font-size:12px; margin-top:32px;">Aarnav Structura · Shivamogga, Karnataka</p>
-      </div>`
+
+        <br>
+
+        <b>Project Brief</b>
+
+        <p>${(enquiry.projectBrief || "-").replace(/\n/g, "<br>")}</p>
+
+        <hr>
+
+        <p>
+            Regards,<br>
+            <b>Aarnav Structura</b><br>
+            Shivamogga, Karnataka
+        </p>
+
+      </div>
+    `,
   });
 }
 
 export async function sendCompanyNotification(enquiry) {
-  await safeSend({
+  return safeSend({
     to: process.env.COMPANY_NOTIFY_EMAIL,
-    subject: `New enquiry — ${enquiry.fullName} (${enquiry.projectType || "General"})`,
+    subject: `🚨 New Website Enquiry - ${enquiry.fullName}`,
     html: `
-      <div style="font-family: Arial, sans-serif; max-width: 560px;">
-        <h3>New website enquiry</h3>
-        <table style="width:100%; border-collapse: collapse;">
-          <tr><td style="padding:4px 0; color:#666;">Name</td><td>${enquiry.fullName}</td></tr>
-          <tr><td style="padding:4px 0; color:#666;">Phone</td><td>${enquiry.phoneNumber}</td></tr>
-          <tr><td style="padding:4px 0; color:#666;">Email</td><td>${enquiry.email || "—"}</td></tr>
-          <tr><td style="padding:4px 0; color:#666;">Location</td><td>${enquiry.location || "—"}</td></tr>
-          <tr><td style="padding:4px 0; color:#666;">Project type</td><td>${enquiry.projectType || "—"}</td></tr>
-          <tr><td style="padding:4px 0; color:#666;">Budget</td><td>${enquiry.budget || "—"}</td></tr>
+      <div style="font-family:Arial,sans-serif;max-width:700px;margin:auto;">
+
+        <h2>New Website Enquiry</h2>
+
+        <table style="border-collapse:collapse;width:100%;">
+
+          <tr>
+            <td><b>Name</b></td>
+            <td>${enquiry.fullName}</td>
+          </tr>
+
+          <tr>
+            <td><b>Phone</b></td>
+            <td>${enquiry.phoneNumber}</td>
+          </tr>
+
+          <tr>
+            <td><b>Email</b></td>
+            <td>${enquiry.email || "-"}</td>
+          </tr>
+
+          <tr>
+            <td><b>Location</b></td>
+            <td>${enquiry.location || "-"}</td>
+          </tr>
+
+          <tr>
+            <td><b>Project Type</b></td>
+            <td>${enquiry.projectType || "-"}</td>
+          </tr>
+
+          <tr>
+            <td><b>Budget</b></td>
+            <td>${enquiry.budget || "-"}</td>
+          </tr>
+
         </table>
-        <p style="margin-top:12px;"><strong>Brief:</strong><br/>${(enquiry.projectBrief || "—").replace(/\n/g, "<br/>")}</p>
-      </div>`
+
+        <br>
+
+        <b>Project Brief</b>
+
+        <p>${(enquiry.projectBrief || "-").replace(/\n/g, "<br>")}</p>
+
+      </div>
+    `,
   });
 }
 
 export async function sendPasswordReset(admin, resetUrl) {
-  await safeSend({
+  return safeSend({
     to: admin.email,
-    subject: "Reset your Aarnav Structura admin password",
+    subject: "Reset Your Aarnav Structura Password",
     html: `
-      <div style="font-family: Arial, sans-serif;">
-        <p>Hi ${admin.name},</p>
-        <p>Click below to reset your password. This link expires in 1 hour.</p>
-        <p><a href="${resetUrl}" style="background:#B8862E;color:#fff;padding:10px 20px;text-decoration:none;border-radius:4px;">Reset Password</a></p>
-        <p>If you didn't request this, ignore this email.</p>
-      </div>`
+      <div style="font-family:Arial,sans-serif">
+
+        <h2>Password Reset</h2>
+
+        <p>Hello ${admin.name},</p>
+
+        <p>You requested a password reset.</p>
+
+        <p>
+          <a href="${resetUrl}"
+             style="padding:12px 24px;
+                    background:#B8862E;
+                    color:white;
+                    text-decoration:none;
+                    border-radius:5px;">
+              Reset Password
+          </a>
+        </p>
+
+        <p>This link expires in 1 hour.</p>
+
+      </div>
+    `,
   });
 }
