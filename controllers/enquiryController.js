@@ -14,16 +14,25 @@ export const submitEnquiry = asyncHandler(async (req, res) => {
 
   const enquiry = await Enquiry.create(req.body, req.ip);
 
-  // Send emails in background
-  sendCustomerConfirmation(enquiry).catch(console.error);
-  sendCompanyNotification(enquiry).catch(console.error);
+  console.log("STEP 1: Enquiry saved");
+
+  try {
+    console.log("STEP 2: Sending customer email...");
+    await sendCustomerConfirmation(enquiry);
+    console.log("STEP 3: Customer email sent");
+
+    console.log("STEP 4: Sending company email...");
+    await sendCompanyNotification(enquiry);
+    console.log("STEP 5: Company email sent");
+  } catch (err) {
+    console.error("EMAIL FAILED");
+    console.error(err);
+  }
 
   res.status(201).json({
     success: true,
     message: "Enquiry received successfully",
-    data: {
-      id: enquiry._id
-    }
+    data: { id: enquiry._id }
   });
 });
 
