@@ -1,64 +1,50 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 import logger from "../config/logger.js";
 
-// Render's dashboard (unlike a shell-parsed .env file) does NOT strip quote
-// characters from environment variable values — if a value is entered as
-// SMTP_PASSWORD="abcd efgh" the app sees the literal quotes as part of the
-// string, which silently breaks SMTP auth. Strip them defensively so a
-// copy-paste mistake in the Render UI can't quietly kill email delivery.
-const unquote = (v) => (typeof v === "string" ? v.trim().replace(/^["'](.*)["']$/, "$1") : v);
+// Both port 587 and 465 timed out connecting to Gmail's SMTP servers from
+// Render's free tier — a network-level block, not an auth issue (confirmed:
+// the connection never got far enough to attempt login). Resend sends over
+// plain HTTPS (port 443), which hosting providers essentially never block,
+// so it sidesteps the problem entirely instead of fighting Render's network.
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-const SMTP_USER = unquote(process.env.SMTP_USER);
-const SMTP_PASSWORD = unquote(process.env.SMTP_PASSWORD);
-const MAIL_FROM = unquote(process.env.MAIL_FROM) || `"Aarnav Structura" <${SMTP_USER}>`;
+// Until you verify your own domain (aarnavstructura.com) in the Resend
+// dashboard, you can only send FROM Resend's sandbox address below — it's
+// allowed to send TO any recipient without domain verification, so email
+// delivery works today. Once your domain is verified in Resend, set
+// MAIL_FROM=Aarnav Structura <no-reply@aarnavstructura.com> in Render's env
+// vars and this will automatically switch to using it.
+const MAIL_FROM = process.env.MAIL_FROM || "Aarnav Structura <onboarding@resend.dev>";
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT) || 587,
-  secure: String(process.env.SMTP_SECURE).toLowerCase() === "true",
-  auth: {
-    user: SMTP_USER,
-    pass: SMTP_PASSWORD,
-  },
-  // Fail fast instead of hanging ~2 minutes on a blocked connection —
-  // makes it obvious within seconds whether this port is reachable at all.
-  connectionTimeout: 15000,
-  greetingTimeout: 15000,
-  socketTimeout: 15000,
-});
-
-// Verify SMTP connection when server starts
-transporter.verify((err, success) => {
-  if (err) {
-    logger.error("❌ SMTP Verification Failed");
-    logger.error(`Using port ${process.env.SMTP_PORT} (secure=${process.env.SMTP_SECURE})`);
-    logger.error(err);
-  } else {
-    logger.info(`✅ SMTP Server Connected (port ${process.env.SMTP_PORT}, secure=${process.env.SMTP_SECURE})`);
-  }
-});
-
-async function safeSend(options) {
+async function safeSend({ to, subject, html }) {
   try {
-    const info = await transporter.sendMail({
+    const { data, error } = await resend.emails.send({
       from: MAIL_FROM,
-      ...options,
+      to: to.split(",").map((s) => s.trim()),
+      subject,
+      html,
     });
 
-    logger.info(`✅ Email handed off to SMTP server`);
-    logger.info(`To: ${options.to}`);
-    logger.info(`Subject: ${options.subject}`);
-    logger.info(`Message ID: ${info.messageId}`);
-    logger.info(`Accepted: ${JSON.stringify(info.accepted)}`);
-    logger.info(`Rejected: ${JSON.stringify(info.rejected)}`);
-    logger.info(`Gmail response: ${info.response}`);
+    if (error) {
+      logger.error("❌ Email Sending Failed");
+      logger.error(`To: ${to}`);
+      logger.error(`Subject: ${subject}`);
+      logger.error(JSON.stringify(error));
+      return null;
+    }
 
-    return info;
+    logger.info(`✅ Email sent successfully`);
+    logger.info(`To: ${to}`);
+    logger.info(`Subject: ${subject}`);
+    logger.info(`Resend ID: ${data?.id}`);
+
+    return data;
   } catch (err) {
-    logger.error("❌ Email Sending Failed");
-    logger.error(`To: ${options.to}`);
-    logger.error(`Subject: ${options.subject}`);
+    logger.error("❌ Email Sending Failed (exception)");
+    logger.error(`To: ${to}`);
+    logger.error(`Subject: ${subject}`);
     logger.error(err);
+    return null;
   }
 }
 
