@@ -20,15 +20,21 @@ const transporter = nodemailer.createTransport({
     user: SMTP_USER,
     pass: SMTP_PASSWORD,
   },
+  // Fail fast instead of hanging ~2 minutes on a blocked connection —
+  // makes it obvious within seconds whether this port is reachable at all.
+  connectionTimeout: 15000,
+  greetingTimeout: 15000,
+  socketTimeout: 15000,
 });
 
 // Verify SMTP connection when server starts
 transporter.verify((err, success) => {
   if (err) {
     logger.error("❌ SMTP Verification Failed");
+    logger.error(`Using port ${process.env.SMTP_PORT} (secure=${process.env.SMTP_SECURE})`);
     logger.error(err);
   } else {
-    logger.info("✅ SMTP Server Connected");
+    logger.info(`✅ SMTP Server Connected (port ${process.env.SMTP_PORT}, secure=${process.env.SMTP_SECURE})`);
   }
 });
 
