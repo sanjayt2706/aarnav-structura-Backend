@@ -23,12 +23,14 @@ const logger = winston.createLogger({
   rejectionHandlers: [new winston.transports.File({ filename: `${LOG_DIR}/rejections.log` })]
 });
 
-if (process.env.NODE_ENV !== "production") {
-  logger.add(
-    new winston.transports.Console({
-      format: combine(colorize(), timestamp({ format: "HH:mm:ss" }), printf(({ level, message, timestamp }) => `${timestamp} ${level}: ${message}`))
-    })
-  );
-}
+// Render (and most PaaS hosts) capture stdout/stderr for the Logs tab — they
+// do NOT read from local files, and local disk is wiped on every redeploy
+// anyway. Console output must always be enabled, in every environment,
+// or production logs become invisible (which is what was happening here).
+logger.add(
+  new winston.transports.Console({
+    format: combine(timestamp({ format: "HH:mm:ss" }), printf(({ level, message, timestamp }) => `${timestamp} ${level}: ${message}`))
+  })
+);
 
 export default logger;
