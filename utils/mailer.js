@@ -39,10 +39,13 @@ async function safeSend(options) {
       ...options,
     });
 
-    logger.info(`✅ Email sent successfully`);
+    logger.info(`✅ Email handed off to SMTP server`);
     logger.info(`To: ${options.to}`);
     logger.info(`Subject: ${options.subject}`);
     logger.info(`Message ID: ${info.messageId}`);
+    logger.info(`Accepted: ${JSON.stringify(info.accepted)}`);
+    logger.info(`Rejected: ${JSON.stringify(info.rejected)}`);
+    logger.info(`Gmail response: ${info.response}`);
 
     return info;
   } catch (err) {
