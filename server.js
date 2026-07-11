@@ -94,5 +94,7 @@ const startServer = async () => {
   process.exit(1);
 }
 };
-
+console.log("===== BACKEND VERSION 2 =====");
+console.log("SMTP_USER:", process.env.SMTP_USER);
+console.log("MAIL_FROM:", process.env.MAIL_FROM);
 startServer();
