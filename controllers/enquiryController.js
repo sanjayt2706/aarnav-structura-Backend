@@ -14,25 +14,22 @@ export const submitEnquiry = asyncHandler(async (req, res) => {
 
   const enquiry = await Enquiry.create(req.body, req.ip);
 
-  console.log("STEP 1: Enquiry saved");
-
-  try {
-    console.log("STEP 2: Sending customer email...");
-    await sendCustomerConfirmation(enquiry);
-    console.log("STEP 3: Customer email sent");
-
-    console.log("STEP 4: Sending company email...");
-    await sendCompanyNotification(enquiry);
-    console.log("STEP 5: Company email sent");
-  } catch (err) {
-    console.error("EMAIL FAILED");
-    console.error(err);
-  }
-
+  // Respond to the browser immediately — don't make the user wait on Gmail's
+  // SMTP round-trip(s). Emails are sent in the background; failures are
+  // logged inside sendCustomerConfirmation/sendCompanyNotification (via
+  // safeSend) and never block or fail this request.
   res.status(201).json({
     success: true,
     message: "Enquiry received successfully",
     data: { id: enquiry._id }
+  });
+
+  Promise.all([
+    sendCustomerConfirmation(enquiry),
+    sendCompanyNotification(enquiry)
+  ]).catch((err) => {
+    console.error("EMAIL FAILED");
+    console.error(err);
   });
 });
 
