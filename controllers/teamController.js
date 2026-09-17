@@ -1,5 +1,6 @@
 import { Team } from "../models/Team.js";
 import { asyncHandler } from "../middleware/errorHandler.js";
+import { uploadToGridFS, deleteFromGridFS } from "../utils/gridfs.js";
 
 export const getAllMembers = asyncHandler(async (req, res) => {
   const result = await Team.list({
@@ -38,7 +39,7 @@ export const createMember = asyncHandler(async (req, res) => {
   const body = { ...req.body };
 
   if (req.file) {
-    body.photo = `/uploads/team/${req.file.filename}`;
+    body.photo = await uploadToGridFS(req.file.buffer, req.file.originalname, req.file.mimetype);
   }
 
   // Harmonize role and designation
@@ -100,7 +101,7 @@ export const updateMember = asyncHandler(async (req, res) => {
   const body = { ...req.body };
 
   if (req.file) {
-    body.photo = `/uploads/team/${req.file.filename}`;
+    body.photo = await uploadToGridFS(req.file.buffer, req.file.originalname, req.file.mimetype);
   }
 
   // Harmonize role and designation
@@ -166,6 +167,10 @@ export const updateMember = asyncHandler(async (req, res) => {
 });
 
 export const deleteMember = asyncHandler(async (req, res) => {
+  const member = await Team.findById(req.params.id);
+  if (member && member.photo) {
+    await deleteFromGridFS(member.photo);
+  }
   await Team.delete(req.params.id);
 
   res.json({

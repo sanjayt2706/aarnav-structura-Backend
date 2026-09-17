@@ -21,32 +21,7 @@ const ALLOWED = [
 ];
 
 function storageFor(folder) {
-
-  const uploadPath = path.join(process.cwd(), "uploads", folder);
-
-  fs.mkdirSync(uploadPath, {
-    recursive: true
-  });
-
-  return multer.diskStorage({
-
-    destination(req, file, cb) {
-      cb(null, uploadPath);
-    },
-
-    filename(req, file, cb) {
-
-      const ext = path.extname(file.originalname).toLowerCase();
-
-      cb(
-        null,
-        `${Date.now()}-${randomUUID()}${ext}`
-      );
-
-    }
-
-  });
-
+  return multer.memoryStorage();
 }
 
 function fileFilter(req, file, cb) {

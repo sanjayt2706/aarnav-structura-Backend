@@ -1,5 +1,6 @@
 import { Gallery } from "../models/gallery.js";
 import { asyncHandler } from "../middleware/errorHandler.js";
+import { uploadToGridFS, deleteFromGridFS } from "../utils/gridfs.js";
 
 export const getAllGallery = asyncHandler(async (req, res) => {
   const result = await Gallery.list({
@@ -39,7 +40,7 @@ export const createGallery = asyncHandler(async (req, res) => {
   const body = { ...req.body };
 
   if (req.file) {
-    body.image = `/uploads/gallery/${req.file.filename}`;
+    body.image = await uploadToGridFS(req.file.buffer, req.file.originalname, req.file.mimetype);
   }
 
   const gallery = await Gallery.create(body);
@@ -54,7 +55,7 @@ export const updateGallery = asyncHandler(async (req, res) => {
   const body = { ...req.body };
 
   if (req.file) {
-    body.image = `/uploads/gallery/${req.file.filename}`;
+    body.image = await uploadToGridFS(req.file.buffer, req.file.originalname, req.file.mimetype);
   }
 
   const gallery = await Gallery.update(req.params.id, body);
@@ -73,6 +74,10 @@ export const updateGallery = asyncHandler(async (req, res) => {
 });
 
 export const deleteGallery = asyncHandler(async (req, res) => {
+  const gallery = await Gallery.findById(req.params.id);
+  if (gallery && gallery.image) {
+    await deleteFromGridFS(gallery.image);
+  }
   await Gallery.delete(req.params.id);
 
   res.json({

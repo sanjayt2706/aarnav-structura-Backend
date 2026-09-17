@@ -18,6 +18,7 @@ import { trackRouter, adminVisitorRouter } from "./routes/visitor.routes.js";
 import dashboardRoutes from "./routes/dashboard.routes.js";
 import { publicSettingsRouter, adminSettingsRouter } from "./routes/settings.routes.js";
 import { projectsRouter, galleryRouter, servicesRouter, testimonialsRouter, teamRouter } from "./routes/content.routes.js";
+import filesRouter from "./routes/files.routes.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -63,8 +64,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(morgan(process.env.NODE_ENV === "production" ? "combined" : "dev", { stream: { write: (msg) => logger.info(msg.trim()) } }));
 
-// Serve uploaded files (project images, gallery, brochures, avatars)
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+// Serve files from GridFS
+app.use("/api/files", filesRouter);
+
 
 // Visitor tracking: assign a session cookie to every request, then log the
 // initial page hit for classic (non-SPA) requests. SPA route changes are
