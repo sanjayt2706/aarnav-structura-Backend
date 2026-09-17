@@ -1,4 +1,4 @@
-import { Gallery } from "../models/Gallery.js";
+import { Gallery } from "../models/gallery.js";
 import { asyncHandler } from "../middleware/errorHandler.js";
 
 export const getAllGallery = asyncHandler(async (req, res) => {
