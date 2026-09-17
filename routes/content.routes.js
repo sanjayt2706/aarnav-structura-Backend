@@ -21,14 +21,22 @@ projectsRouter.get("/:id", projectController.getProject);
 projectsRouter.post(
   "/",
   requireAuth,
-  uploadTo("projects").single("cover_image"),
+  uploadTo("projects").fields([
+    { name: "cover_image", maxCount: 1 },
+    { name: "media_files", maxCount: 10 },
+    { name: "document_files", maxCount: 5 }
+  ]),
   projectController.createProject
 );
 
 projectsRouter.put(
   "/:id",
   requireAuth,
-  uploadTo("projects").single("cover_image"),
+  uploadTo("projects").fields([
+    { name: "cover_image", maxCount: 1 },
+    { name: "media_files", maxCount: 10 },
+    { name: "document_files", maxCount: 5 }
+  ]),
   projectController.updateProject
 );
 

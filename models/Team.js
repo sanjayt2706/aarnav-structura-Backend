@@ -9,7 +9,12 @@ const teamSchema = new mongoose.Schema(
 
     designation: {
       type: String,
-      required: true
+      default: ""
+    },
+
+    role: {
+      type: String,
+      default: ""
     },
 
     photo: {
@@ -32,6 +37,11 @@ const teamSchema = new mongoose.Schema(
       default: ""
     },
 
+    linkedin_url: {
+      type: String,
+      default: ""
+    },
+
     instagram: {
       type: String,
       default: ""
@@ -42,7 +52,17 @@ const teamSchema = new mongoose.Schema(
       default: ""
     },
 
+    bio: {
+      type: String,
+      default: ""
+    },
+
     order: {
+      type: Number,
+      default: 0
+    },
+
+    display_order: {
       type: Number,
       default: 0
     },
@@ -50,10 +70,17 @@ const teamSchema = new mongoose.Schema(
     active: {
       type: Boolean,
       default: true
+    },
+
+    is_active: {
+      type: Boolean,
+      default: true
     }
   },
   {
-    timestamps: true
+    timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
   }
 );
 
@@ -89,6 +116,13 @@ export const Team = {
             $regex: search,
             $options: "i"
           }
+        },
+
+        {
+          role: {
+            $regex: search,
+            $options: "i"
+          }
         }
 
       ];
@@ -97,7 +131,9 @@ export const Team = {
 
     const rows = await TeamModel.find(filter)
       .sort({
-        order: 1
+        display_order: 1,
+        order: 1,
+        createdAt: 1
       })
       .skip((page - 1) * limit)
       .limit(limit);

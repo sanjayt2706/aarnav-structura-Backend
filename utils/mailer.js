@@ -6,17 +6,22 @@ import logger from "../config/logger.js";
 // the connection never got far enough to attempt login). Resend sends over
 // plain HTTPS (port 443), which hosting providers essentially never block,
 // so it sidesteps the problem entirely instead of fighting Render's network.
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
-// Until you verify your own domain (aarnavstructura.com) in the Resend
-// dashboard, you can only send FROM Resend's sandbox address below — it's
-// allowed to send TO any recipient without domain verification, so email
-// delivery works today. Once your domain is verified in Resend, set
-// MAIL_FROM=Aarnav Structura <no-reply@aarnavstructura.com> in Render's env
-// vars and this will automatically switch to using it.
+// NOTE ON RESEND SANDBOX RESTRICTIONS:
+// With Resend's free sandbox account ("onboarding@resend.dev"), you can ONLY send emails
+// to the account owner's email address (anrcreativecivilarchitecture@gmail.com).
+// Sending confirmation emails to outside user addresses will fail with a 403 validation_error
+// until you add & verify a custom domain (e.g., aarnavstructura.com) in resend.com/domains.
+// Once verified, set MAIL_FROM in your environment variables to e.g.:
+// MAIL_FROM="Aarnav Structura <no-reply@aarnavstructura.com>"
 const MAIL_FROM = process.env.MAIL_FROM || "Aarnav Structura <onboarding@resend.dev>";
 
 async function safeSend({ to, subject, html }) {
+  if (!resend) {
+    logger.warn("⚠️ RESEND_API_KEY not configured in .env. Skipping email sending.");
+    return null;
+  }
   try {
     const { data, error } = await resend.emails.send({
       from: MAIL_FROM,
@@ -29,7 +34,14 @@ async function safeSend({ to, subject, html }) {
       logger.error("❌ Email Sending Failed");
       logger.error(`To: ${to}`);
       logger.error(`Subject: ${subject}`);
-      logger.error(JSON.stringify(error));
+
+      if (error.name === "validation_error" && error.message?.includes("resend.com/domains")) {
+        logger.error(
+          "⚠️ RESEND DOMAIN UNVERIFIED: Sandbox mode restricts sending emails to third-party recipients. Please verify your domain at https://resend.com/domains and set MAIL_FROM to an address on your custom domain."
+        );
+      } else {
+        logger.error(JSON.stringify(error));
+      }
       return null;
     }
 

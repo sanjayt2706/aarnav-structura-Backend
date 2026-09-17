@@ -28,25 +28,82 @@ const projectSchema = new mongoose.Schema(
       default: ""
     },
 
+    cover_image: {
+      type: String,
+      default: ""
+    },
+
     images: [
       {
         type: String
       }
     ],
 
+    year: {
+      type: String,
+      default: ""
+    },
+
+    area_sqft: {
+      type: String,
+      default: ""
+    },
+
     featured: {
       type: Boolean,
       default: false
     },
 
+    is_featured: {
+      type: Boolean,
+      default: false
+    },
+
+    brief: {
+      type: String,
+      default: ""
+    },
+
+    detailed_plan: {
+      type: String,
+      default: ""
+    },
+
+    video_url: {
+      type: String,
+      default: ""
+    },
+
+    media: [
+      {
+        url: { type: String, required: true },
+        type: { type: String, default: "image" }, // "image" or "video"
+        name: { type: String, default: "" }
+      }
+    ],
+
+    documents: [
+      {
+        name: { type: String, default: "" },
+        url: { type: String, required: true },
+        size: { type: String, default: "" }
+      }
+    ],
+
+    display_order: {
+      type: Number,
+      default: 0
+    },
+
     status: {
       type: String,
-      enum: ["Draft", "Published"],
-      default: "Published"
+      default: "published"
     }
   },
   {
-    timestamps: true
+    timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
   }
 );
 

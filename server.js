@@ -17,7 +17,7 @@ import enquiryRoutes, { adminEnquiryRoutes } from "./routes/enquiry.routes.js";
 import { trackRouter, adminVisitorRouter } from "./routes/visitor.routes.js";
 import dashboardRoutes from "./routes/dashboard.routes.js";
 import { publicSettingsRouter, adminSettingsRouter } from "./routes/settings.routes.js";
-// import { projectsRouter, galleryRouter, servicesRouter, testimonialsRouter, teamRouter } from "./routes/content.routes.js";
+import { projectsRouter, galleryRouter, servicesRouter, testimonialsRouter, teamRouter } from "./routes/content.routes.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -29,7 +29,35 @@ app.set("trust proxy", 1);
 
 // ---------- Core middleware ----------
 app.use(helmet({ crossOriginResourcePolicy: { policy: "cross-origin" } })); // allow uploaded images to be fetched cross-origin by the frontend
-app.use(cors({ origin: [process.env.CLIENT_URL, process.env.ADMIN_URL].filter(Boolean), credentials: true }));
+
+const allowedOrigins = [
+  process.env.CLIENT_URL,
+  process.env.ADMIN_URL,
+  "http://localhost:5173",
+  "http://localhost:5174",
+  "http://localhost:3000",
+  "http://127.0.0.1:5173",
+  "http://127.0.0.1:5174"
+].filter(Boolean);
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+      if (
+        allowedOrigins.indexOf(origin) !== -1 ||
+        origin.includes("localhost") ||
+        origin.includes("127.0.0.1") ||
+        origin.includes("onrender.com") ||
+        origin.includes("vercel.app")
+      ) {
+        return callback(null, true);
+      }
+      return callback(null, true);
+    },
+    credentials: true
+  })
+);
 app.use(express.json({ limit: "2mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -54,11 +82,11 @@ app.get("/api/health", (req, res) => res.json({ success: true, message: "API is 
 app.use("/api", enquiryRoutes);              // POST /api/enquiry
 app.use("/api/track", trackRouter);           // POST /api/track/pageview
 app.use("/api/settings", publicSettingsRouter);
-// app.use("/api/projects", projectsRouter);
-// app.use("/api/gallery", galleryRouter);
-// app.use("/api/services", servicesRouter);
-// app.use("/api/testimonials", testimonialsRouter);
-// app.use("/api/team", teamRouter);
+app.use("/api/projects", projectsRouter);
+app.use("/api/gallery", galleryRouter);
+app.use("/api/services", servicesRouter);
+app.use("/api/testimonials", testimonialsRouter);
+app.use("/api/team", teamRouter);
 
 // ---------- Auth ----------
 app.use("/api/auth", authRoutes);

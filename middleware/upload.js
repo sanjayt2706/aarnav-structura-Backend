@@ -9,7 +9,15 @@ const ALLOWED = [
   ".png",
   ".webp",
   ".gif",
-  ".pdf"
+  ".pdf",
+  ".mp4",
+  ".webm",
+  ".mov",
+  ".mkv",
+  ".ogg",
+  ".doc",
+  ".docx",
+  ".dwg"
 ];
 
 function storageFor(folder) {
@@ -68,7 +76,7 @@ export const uploadTo = (folder) =>
     limits: {
 
       fileSize:
-        (Number(process.env.MAX_UPLOAD_MB) || 8) *
+        (Number(process.env.MAX_UPLOAD_MB) || 50) *
         1024 *
         1024
 
