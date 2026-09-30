@@ -106,9 +106,12 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
+import { seedInitialData } from "./config/seed.js";
+
 const startServer = async () => {
   try {
     await connectDB();
+    await seedInitialData();
 
     app.listen(PORT, () => {
       logger.info(
