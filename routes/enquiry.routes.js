@@ -7,7 +7,11 @@ import { requireAuth } from "../middleware/auth.js";
 const router = Router();
 
 // Prevent spam-submission of the public contact form.
-const submitLimiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 10, message: { success: false, message: "Too many submissions, please try again later." } });
+const submitLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: process.env.NODE_ENV === "production" ? 50 : 500,
+  message: { success: false, message: "Too many submissions, please try again later." }
+});
 
 // ---------- Public ----------
 router.post(
@@ -16,7 +20,7 @@ router.post(
   [
     body("fullName").trim().notEmpty().withMessage("Full name is required"),
     body("phoneNumber").trim().notEmpty().withMessage("Phone number is required"),
-    body("email").optional({ checkFalsy: true }).isEmail().withMessage("Invalid email")
+    body("email").optional({ checkFalsy: true }).isEmail().withMessage("Invalid email address")
   ],
   ctrl.submitEnquiry
 );
