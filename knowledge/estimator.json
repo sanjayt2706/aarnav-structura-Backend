@@ -1,0 +1,23 @@
+{
+  "packages": [
+    {
+      "id": "standard",
+      "name": "Standard RCC Construction",
+      "ratePerSqFt": 1750,
+      "specifications": "IS 456 compliant RCC framing, Tata/JSW Fe550D TMT steel, solid block / red brick masonry, standard vitrified flooring, Supreme CPVC piping."
+    },
+    {
+      "id": "premium",
+      "name": "Premium Turnkey Construction",
+      "ratePerSqFt": 2150,
+      "specifications": "Teakwood doors, 4x2 Kajaria vitrified tiles, Jaguar sanitaryware, Asian Royale paint, false ceiling & modular kitchen framework."
+    },
+    {
+      "id": "luxury",
+      "name": "Luxury Architectural Build",
+      "ratePerSqFt": 2750,
+      "specifications": "Custom architect villa design, Italian marble flooring, Kohler/Grohe sanitaryware, smart home automation & landscape integration."
+    }
+  ],
+  "disclaimer": "Indicative estimate. Final pricing depends on site conditions, drawings, specifications and material selection."
+}

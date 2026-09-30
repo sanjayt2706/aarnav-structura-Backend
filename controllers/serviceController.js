@@ -1,5 +1,6 @@
 import { Service } from "../models/Service.js";
 import { asyncHandler } from "../middleware/errorHandler.js";
+import { uploadToGridFS, deleteFromGridFS } from "../utils/gridfs.js";
 
 export const getAllServices = asyncHandler(async (req, res) => {
   const result = await Service.list({
@@ -35,7 +36,7 @@ export const createService = asyncHandler(async (req, res) => {
   const body = { ...req.body };
 
   if (req.file) {
-    body.image = `/uploads/services/${req.file.filename}`;
+    body.image = await uploadToGridFS(req.file.buffer, req.file.originalname, req.file.mimetype);
   }
 
   const service = await Service.create(body);
@@ -50,7 +51,7 @@ export const updateService = asyncHandler(async (req, res) => {
   const body = { ...req.body };
 
   if (req.file) {
-    body.image = `/uploads/services/${req.file.filename}`;
+    body.image = await uploadToGridFS(req.file.buffer, req.file.originalname, req.file.mimetype);
   }
 
   const service = await Service.update(req.params.id, body);
@@ -69,6 +70,10 @@ export const updateService = asyncHandler(async (req, res) => {
 });
 
 export const deleteService = asyncHandler(async (req, res) => {
+  const service = await Service.findById(req.params.id);
+  if (service && service.image) {
+    await deleteFromGridFS(service.image);
+  }
   await Service.delete(req.params.id);
 
   res.json({

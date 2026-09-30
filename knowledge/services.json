@@ -1,0 +1,32 @@
+[
+  {
+    "id": "architectural-planning",
+    "title": "Architectural Planning & Sanctions",
+    "description": "Vastu-compliant concept designs, 2D working drawings, 3D elevations, and end-to-end liaison for SUDA, BBMP, BDA, and DTCP statutory plan approvals."
+  },
+  {
+    "id": "structural-engineering",
+    "title": "Structural RCC & Soil Engineering",
+    "description": "Foundation load analysis, STAAD.Pro structural modeling, seismic detailing (IS 1893 / IS 456), concrete cube testing, and structural stability certification."
+  },
+  {
+    "id": "turnkey-construction",
+    "title": "Turnkey Residential Construction",
+    "description": "Complete civil execution from soil excavation to key handover. Single-point accountability, branded IS-grade materials, and milestone-linked payment schedules."
+  },
+  {
+    "id": "commercial-fitouts",
+    "title": "Commercial & Institutional Fit-Outs",
+    "description": "High-performance office interiors, retail showrooms, healthcare facilities, and industrial civil infrastructure designed for longevity and operational safety."
+  },
+  {
+    "id": "project-management",
+    "title": "Project Management Consultancy (PMC)",
+    "description": "Independent BOQ preparation, contractor coordination, stage-wise quality auditing, MEP inspection, and transparent progress reporting throughout the build."
+  },
+  {
+    "id": "structural-retrofitting",
+    "title": "Structural Strengthening & Retrofitting",
+    "description": "Column jacketing, structural repair, waterproofing overhauls, and architectural remodeling for existing residential and commercial structures."
+  }
+]

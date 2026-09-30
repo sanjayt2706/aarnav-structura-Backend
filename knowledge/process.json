@@ -1,0 +1,7 @@
+[
+  { "stage": "01", "name": "Discovery & Site Mapping", "details": "Technical site visit, soil testing review, requirement mapping, and feasibility analysis." },
+  { "stage": "02", "name": "Design & BOQ Estimation", "details": "Vastu architectural planning, 3D elevation drawings, detailed BOQ, and fixed project quotation." },
+  { "stage": "03", "name": "Statutory Approvals", "details": "SUDA, BBMP, BDA plan sanctions and statutory clearances managed end-to-end." },
+  { "stage": "04", "name": "Supervised Execution", "details": "IS 456-compliant RCC framing, batch quality control, weekly progress reports, and stage inspections." },
+  { "stage": "05", "name": "Handover & Warranty", "details": "Final quality audit, punch-list clearance, documentation package, and 1-year defect liability warranty." }
+]

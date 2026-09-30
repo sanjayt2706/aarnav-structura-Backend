@@ -49,12 +49,11 @@ app.use(
         allowedOrigins.indexOf(origin) !== -1 ||
         origin.includes("localhost") ||
         origin.includes("127.0.0.1") ||
-        origin.includes("onrender.com") ||
-        origin.includes("vercel.app")
+        (process.env.ALLOWED_DOMAINS && process.env.ALLOWED_DOMAINS.split(",").some((d) => origin.includes(d.trim())))
       ) {
         return callback(null, true);
       }
-      return callback(null, true);
+      return callback(new Error("CORS policy violation: Origin not allowed"), false);
     },
     credentials: true
   })
@@ -80,8 +79,11 @@ app.get("/", (req, res, next) => {
 // ---------- Health check ----------
 app.get("/api/health", (req, res) => res.json({ success: true, message: "API is running", time: new Date().toISOString() }));
 
+import aiRoutes from "./routes/ai.routes.js";
+
 // ---------- Public routes ----------
 app.use("/api", enquiryRoutes);              // POST /api/enquiry
+app.use("/api/ai", aiRoutes);                // POST /api/ai/consult & /api/ai/handoff
 app.use("/api/track", trackRouter);           // POST /api/track/pageview
 app.use("/api/settings", publicSettingsRouter);
 app.use("/api/projects", projectsRouter);
@@ -98,9 +100,6 @@ app.use("/api/admin/enquiries", adminEnquiryRoutes);
 app.use("/api/admin/visitors", adminVisitorRouter);
 app.use("/api/admin/dashboard", dashboardRoutes);
 app.use("/api/admin/settings", adminSettingsRouter);
-// Note: projects/gallery/services/testimonials/team admin writes (POST/PUT/DELETE)
-// are already protected by requireAuth inside content.routes.js and share the
-// same /api/<resource> paths as the public GETs above.
 
 app.use(notFound);
 app.use(errorHandler);
@@ -118,13 +117,10 @@ const startServer = async () => {
     });
 
   } catch (err) {
-  console.error("========== SERVER ERROR ==========");
-  console.error(err);
-  console.error(err.stack);
-  process.exit(1);
-}
+    logger.error("========== SERVER ERROR ==========");
+    logger.error(err.stack || err.message);
+    process.exit(1);
+  }
 };
-console.log("===== BACKEND VERSION 2 =====");
-console.log("SMTP_USER:", process.env.SMTP_USER);
-console.log("MAIL_FROM:", process.env.MAIL_FROM);
+
 startServer();

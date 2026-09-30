@@ -33,6 +33,7 @@ router.get("/:id", asyncHandler(async (req, res) => {
     const contentType = file.contentType || "application/octet-stream";
     res.setHeader("Content-Type", contentType);
     res.setHeader("Content-Disposition", `inline; filename="${file.filename}"`);
+    res.setHeader("Cache-Control", "public, max-age=604800, stale-while-revalidate=86400");
 
     const downloadStream = bucket.openDownloadStream(new mongoose.Types.ObjectId(fileId));
     downloadStream.pipe(res);

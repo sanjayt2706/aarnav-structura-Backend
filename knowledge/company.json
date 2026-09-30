@@ -1,0 +1,18 @@
+{
+  "name": "Aarnav Structura",
+  "tagline": "Civil & Architectural Engineering",
+  "description": "Aarnav Structura is a premier civil engineering, turnkey residential construction, structural design, and architectural planning firm based in Shivamogga, serving residential and commercial clients across Karnataka.",
+  "location": "Shivamogga, Karnataka 577201, India",
+  "serviceAreas": ["Shivamogga", "Bhadravati", "Bengaluru", "Mangaluru", "Chikkamagaluru", "Davangere", "Karnataka"],
+  "contacts": {
+    "phone": ["+91 77603 76348", "+91 87623 98728"],
+    "email": "anrcreativecivilarchitecture@gmail.com",
+    "whatsapp": "+91 77603 76348",
+    "hours": "Monday – Saturday: 9:00 AM – 7:00 PM IST"
+  },
+  "standards": [
+    "Bureau of Indian Standards (BIS) IS 456:2000 Plain & Reinforced Concrete Code",
+    "IS 1893:2016 Seismic Resistant Structural Detailing",
+    "SUDA (Shivamogga Urban Development Authority) & BBMP/BDA Plan Sanction Approvals"
+  ]
+}

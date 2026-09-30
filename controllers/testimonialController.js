@@ -1,5 +1,6 @@
 import { Testimonial } from "../models/Testimonial.js";
 import { asyncHandler } from "../middleware/errorHandler.js";
+import { uploadToGridFS, deleteFromGridFS } from "../utils/gridfs.js";
 
 export const getAllTestimonials = asyncHandler(async (req, res) => {
   const result = await Testimonial.list({
@@ -35,7 +36,7 @@ export const createTestimonial = asyncHandler(async (req, res) => {
   const body = { ...req.body };
 
   if (req.file) {
-    body.image = `/uploads/testimonials/${req.file.filename}`;
+    body.image = await uploadToGridFS(req.file.buffer, req.file.originalname, req.file.mimetype);
   }
 
   const testimonial = await Testimonial.create(body);
@@ -50,7 +51,7 @@ export const updateTestimonial = asyncHandler(async (req, res) => {
   const body = { ...req.body };
 
   if (req.file) {
-    body.image = `/uploads/testimonials/${req.file.filename}`;
+    body.image = await uploadToGridFS(req.file.buffer, req.file.originalname, req.file.mimetype);
   }
 
   const testimonial = await Testimonial.update(req.params.id, body);
@@ -69,6 +70,10 @@ export const updateTestimonial = asyncHandler(async (req, res) => {
 });
 
 export const deleteTestimonial = asyncHandler(async (req, res) => {
+  const testimonial = await Testimonial.findById(req.params.id);
+  if (testimonial && testimonial.image) {
+    await deleteFromGridFS(testimonial.image);
+  }
   await Testimonial.delete(req.params.id);
 
   res.json({
